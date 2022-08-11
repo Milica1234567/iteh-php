@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedicaMea</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif&family=Roboto:ital,wght@0,300;0,400;1,100;1,300&family=Square+Peg&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/4e1f20daf1.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <section class="header-about">
+        <nav>
+            <a href="index.html"><img class="logo" src="images/logo34.png" alt=""></a>
+            
+            <div class="navigation-menu" id="navigation-menu">
+                <i class="fa solid fa-xmark" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="">POČETNA</a></li>
+                    <li><a href="">O MENI</a></li>
+                    <li><a href="">ZAKAZIVANJE</a></li>
+                    <li><a href="">KONTAKT</a></li>
+                    <li><a href="">BLOG</a></li>
+                </ul>
+            </div>
+            <i class="fa solid fa-bars" onclick="showMenu()"></i>
+        </nav>
+
+    <h1>O MENI</h1>
+    </section>
+
+
+<!-------------O meni sadrzaj-------------->
+<section class="o-meni">
+
+    <div class="red-a">
+
+
+        <div class="o-meni-col">
+            <img class="profilna" src="images/profilna.jpg">
+        </div>
+        <div class="o-meni-col">
+            <h1>Nešto ukratko o meni</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea velit distinctio porro pariatur aperiam dolorum ducimus illo non aliquid. 
+                Repellat ducimus ratione dolore cumque saepe vero expedita possimus sequi dicta.Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea velit distinctio porro pariatur aperiam dolorum ducimus illo non aliquid. 
+                Repellat ducimus ratione dolore cumque saepe vero expedita possimus sequi dicta.</p>
+            <a href="" class="btn vise">Pročitajte više</a>
+        </div>
+        
+        
+ 
+        
+    </div>
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+<!-------------Footer-------------->
+<footer>
+    <div class="red-footer">
+        <div class="footer-col">
+            <img src="images/MicrosoftTeams-image (15).png" class="logo-footer">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur culpa nisi omnis dignissimos iure. Eos, deserunt. Quaerat dolore exercitationem, ullam tempora veniam atque maxime quo illum excepturi magni eum accusantium?</p>
+        </div>
+        <div class="footer-col">
+            <h3>Newsletter</h3>
+            <form action="">
+                <i class="fa fa-envelope"></i>
+                <input type="email" placeholder="Vaš mail", required>
+                <button type="submit"><i class="fa-solid fa-arrow-right"></i></button>
+            </form>
+            <div class="ikonice">
+                <i class="fa fa-facebook-f"></i>
+                <i class="fa fa-instagram"></i>
+                <i class="fa fa-envelope"></i>
+                <i class="fa fa-phone"></i> 
+            </div>
+           
+        </div>
+        <div class="footer-col">
+            <h3>Navigacija</h3>
+            <ul>
+                <li><a href="">POČETNA</a></li>
+                <li><a href="">O MENI</a></li>
+                <li><a href="">ZAKAZIVANJE</a></li>
+                <li><a href="">KONTAKT</a></li>
+                <li><a href="">BLOG</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            
+            
+            
+        </div>
+    </div>
+    <hr>
+    <p class="copyright">Made for <img src="images/MicrosoftTeams-image (15).png" class="logo-copyrigh"> by Milica Mihailovic</p>
+</footer>
+
+<!-------------JavaScript-------------->
+    <script>
+        var navLinks= document.getElementById("navigation-menu")
+        function showMenu(){
+            navLinks.style.right='0'
+        }
+        function hideMenu(){
+            navLinks.style.right='-200px'
+        }
+    </script>
+</body>
+</html>

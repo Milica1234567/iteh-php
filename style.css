@@ -358,3 +358,90 @@ hr{
     }
 }
 
+/*---------------------------about page---------------------------*/
+
+.header-about{
+    height: 50vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30, 0.7), rgba(4,9,30,0.7)), url(images/aboutbaner.jpg);
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    color: white;
+}
+
+.header-about h1{
+    margin-top: 50px;
+}
+
+.o-meni{
+    width: 80%;
+    margin: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    
+}
+
+.red-a{
+    display: flex;
+    width: 80%;
+    margin: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.o-meni-col{
+    flex: 1;
+    padding: 30px 2px;
+}
+
+
+.profilna{
+    max-width: 250px;
+    
+}
+
+.o-meni-col h1{
+    padding-top: 70px;
+    padding-left: 50px;
+}
+.o-meni-col p{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.vise{
+    border: 1px solid #DF646E;
+    background: transparent;
+    color: #DF646E;
+}
+
+.vise:hover{
+    color: white;
+}
+
+@media(max-width:700px){
+    
+    .o-meni{
+        width: 80%;
+        margin: auto;
+    }
+
+    .red-a{
+        display: block;
+        padding-top: 0;
+    }
+
+    .o-meni-col{
+        flex-basis: 48%;
+        padding: 10px 2px;
+    }
+}
+
+
+
+
+
+
+
+
+
