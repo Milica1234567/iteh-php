@@ -464,8 +464,6 @@ hr{
     padding-top: 50px;
     padding-bottom: 50px;
 }
-
-
 .post{
     display: flex;
     background: #fff3f3;
@@ -497,11 +495,109 @@ hr{
 .post-desno p{
     padding-bottom: 15px;
 }
-
-.post-desno a{
-    
+@media(max-width:700px){
+    .blog-red{
+        flex-direction: column;
+    }
+    .post{
+        flex-direction: column;
+    }
+    .post-levo img{
+        max-width: 200px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .post-parni{
+        flex-direction: column;
+    }
 }
 
+/*---------------------------post 1---------------------------*/
+
+.header-post1{
+    height: 50vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30, 0.7), rgba(4,9,30,0.7)), url(images/post1.jpg);
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    color: white;
+}
+.header-post1 h1{
+    margin-top: 50px;
+    
+}
+.post1-content{
+    width: 80%;
+    margin: auto;
+    padding: 60px 0;
+}
+.post1-red{
+    display: flex;
+}
+.post1-levo{
+    flex-basis: 65%;
+
+}
+.post1-levo img{
+    width: 100%;
+    max-width: 500px;
+}
+.post1-levo h2{
+    color: #222;
+    font-weight: 600;
+    margin: 30px 0;
+    text-align: center;
+}
+.post1-levo p{
+    color: #222;
+    padding: 0;
+}
+.potpis{
+    margin: 50px;
+    text-align: right;
+}
+.post1-desno{
+    padding-left: 70px;
+    flex-basis: 32%;
+}
+.post1-desno h3{
+    text-align: center;
+    background: #DF646E;
+    color: #fff;
+    padding: 7px 0;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.post1-desno div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+    box-sizing: border-box;
+}
+.reklama img{
+    margin-top: 150px;
+}
+@media(max-width:700px){
+    .post1-red{
+        flex-direction: column;
+    }
+    
+    .header-post1 h1{
+        font-size: 20px;
+    }
+ 
+    .post1-desno{
+        float: left;
+    }
+    .reklama img{
+        max-width: 300px;
+        
+    }
+}
 
 
 
