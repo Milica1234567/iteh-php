@@ -12,9 +12,9 @@
 <script src="https://kit.fontawesome.com/4e1f20daf1.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <section class="header">
+    <section class="header-login">
         <nav>
-            <a href="index.html"><img class="logo" src="images/logo34.png" alt=""></a>
+            <a href="login.html"><img class="logo" src="images/logo34.png" alt=""></a>
             
             <div class="navigation-menu" id="navigation-menu">
                 <i class="fa solid fa-xmark" onclick="hideMenu()"></i>
@@ -31,9 +31,23 @@
             <div class="form-box">
                 <div class="button-box">
                     <div id="btn"></div>
-                    <button type="button" class="toggle-btn">Log In</button>
-                    <button type="button" class="toggle-btn">Register</button>
+                    <button type="button" class="toggle-btn" onclick="login()">Log In</button>
+                    <button type="button" class="toggle-btn" onclick="register()">Register</button>
                 </div>
+                <form id="login" class="input-polja">
+                    <input type="text" class="input" placeholder="Vaše ime" required>
+                    <input type="text" class="input" placeholder="Vaše prezime" required>
+                    <input type="text" class="input" placeholder="Password" required>
+                    <button type="submit" class="submit-btn">Log In</button>
+                </form>
+                <form id="register" class="input-polja">
+                    <input type="text" class="input" placeholder="Vaše ime" required>
+                    <input type="text" class="input" placeholder="Vaše prezime" required>
+                    <input type="text" class="input" placeholder="Vaš e-mail" required>
+                    <input type="text" class="input" placeholder="Password" required>
+                    <input type="text" class="input" placeholder="Potvrdite password" required>
+                    <button type="submit" class="submit-btn">Register</button>
+                </form>
             </div>
 
     </div>
@@ -52,6 +66,24 @@
         function hideMenu(){
             navLinks.style.right='-200px'
         }
+    </script>
+    <script>
+        var x=document.getElementById("login");
+        var y=document.getElementById("register");
+        var z=document.getElementById("btn");
+
+        function register(){
+            x.style.left="-400px";
+            y.style.left="50px";
+            z.style.left="110px";
+        }
+
+        function login(){
+            x.style.left="50px";
+            y.style.left="450px";
+            z.style.left="0px";
+        }
+
     </script>
 </body>
 </html>
