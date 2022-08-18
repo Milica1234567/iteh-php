@@ -34,6 +34,7 @@
     padding : 10px;
     text-align : center;
     font-family : Arial;
+  
 }
 
 .dycalendar-day-container div{
@@ -75,11 +76,11 @@
 
 .dycalendar-month-container .dycalendar-header {
     position : relative;
+    top: 50px;
 }
 
 .dycalendar-month-container .dycalendar-header .dycalendar-prev-next-btn {
     position : absolute;
-    top : 0;
     cursor : pointer;
 }
 
@@ -94,6 +95,7 @@
 .dycalendar-month-container .dycalendar-span-month-year {
     margin : 5px;
     cursor : pointer;
+    position: relative;
 }
 
 .dycalendar-month-container .dycalendar-body table tr td {
@@ -102,7 +104,7 @@
 
 .dycalendar-month-container .dycalendar-today-date,
 .dycalendar-month-container .dycalendar-target-date {
-    background-color: #111;
+    background-color: white;
     color : #fff;
     border-radius: 2px;
 }

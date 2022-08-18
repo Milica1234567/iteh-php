@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MedicaMea</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="dycalendar.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=PT+Serif&family=Roboto:ital,wght@0,300;0,400;1,100;1,300&family=Square+Peg&display=swap" rel="stylesheet">
 <script src="https://kit.fontawesome.com/4e1f20daf1.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <section class="header-login">
+    <section class="header-zakazivanje">
         <nav>
             <a href="zakazivanje.html"><img class="logo" src="images/logo34.png" alt=""></a>
             
@@ -27,6 +28,16 @@
             </div>
             <i class="fa solid fa-bars" onclick="showMenu()"></i>
         </nav>
+        <div class="kalendar-forma-box">
+            <div class="kalendar">
+                <div id="dycalendar"></div>
+            </div>
+                
+            
+            <div class="forma-zakazi">
+                
+            </div>
+        </div>
 
     </section>
 
@@ -44,6 +55,19 @@
             navLinks.style.right='-200px'
         }
     </script>
+       <script src="dycalendar.js"></script>
+       <script>
+           dycalendar.draw({
+               target: '#dycalendar',
+               type: 'month',
+               dayformat: 'full',
+               monthformat: 'full',
+               highlighttargetdate: true,
+               prevnextbutton: 'show',
+   
+           })
+       </script>
+  
  
 </body>
 </html>
