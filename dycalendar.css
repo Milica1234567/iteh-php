@@ -76,7 +76,8 @@
 
 .dycalendar-month-container .dycalendar-header {
     position : relative;
-    top: 50px;
+    top:0;
+    
 }
 
 .dycalendar-month-container .dycalendar-header .dycalendar-prev-next-btn {
@@ -86,9 +87,11 @@
 
 .dycalendar-month-container .dycalendar-header .dycalendar-prev-next-btn.prev-btn {
     left : 0;
+    top: 0;
 }
 
 .dycalendar-month-container .dycalendar-header .dycalendar-prev-next-btn.next-btn {
+    top: 0;
     right : 0;
 }
 

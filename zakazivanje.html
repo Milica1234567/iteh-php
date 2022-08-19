@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,22 +9,25 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="dycalendar.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=PT+Serif&family=Roboto:ital,wght@0,300;0,400;1,100;1,300&family=Square+Peg&display=swap" rel="stylesheet">
-<script src="https://kit.fontawesome.com/4e1f20daf1.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=PT+Serif&family=Roboto:ital,wght@0,300;0,400;1,100;1,300&family=Square+Peg&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/4e1f20daf1.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
     <section class="header-zakazivanje">
         <nav>
             <a href="zakazivanje.html"><img class="logo" src="images/logo34.png" alt=""></a>
-            
+
             <div class="navigation-menu" id="navigation-menu">
                 <i class="fa solid fa-xmark" onclick="hideMenu()"></i>
                 <ul>
-                    <li><a href="">POČETNA</a></li>
-                    <li><a href="">O MENI</a></li>
-                    <li><a href="">ZAKAZIVANJE</a></li>
-                    <li><a href="">BLOG</a></li>
+                    <li><a href="index.html">POČETNA</a></li>
+                    <li><a href="about.htm">O MENI</a></li>
+                    <li><a href="login.html">ZAKAZIVANJE</a></li>
+                    <li><a href="blog.html">BLOG</a></li>
                 </ul>
             </div>
             <i class="fa solid fa-bars" onclick="showMenu()"></i>
@@ -32,10 +36,36 @@
             <div class="kalendar">
                 <div id="dycalendar"></div>
             </div>
-                
-            
             <div class="forma-zakazi">
-                
+                <form action="#" class="form-zakazi">
+                    <div class="korisnicki-podaci">
+                        <div class="input-box">
+                            
+                            <input type="text" class="input-forma-zakazi" placeholder="Ime deteta">
+                        </div>
+                        <div class="input-box">
+                            
+                            <input type="text" class="input-forma-zakazi" placeholder="Prezime deteta">
+                        </div>
+                        <div class="input-box">
+                            
+                            <input type="text" class="input-forma-zakazi" placeholder="Starost deteta">
+                        </div>
+                        <div class="input-box">
+                            
+                            <textarea id="simptomi" name="simptomi" rows="4" cols="50">Unesite kratak opis simptoma deteta</textarea>
+                        </div>
+                        <div class="input-box">
+                            
+                            <input type="text" class="input-forma-zakazi" placeholder="Vaša adresa:">
+                        </div>
+                        
+                        <div class="input-box">
+                            <span class="details">Datum i vreme posete:</span>
+                            <input type="datetime-local" name="begin" placeholder="Datum i vreme posete">
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
 
@@ -45,29 +75,30 @@
 
 
 
-<!-------------JavaScript-------------->
+    <!-------------JavaScript-------------->
     <script>
-        var navLinks= document.getElementById("navigation-menu")
-        function showMenu(){
-            navLinks.style.right='0'
+        var navLinks = document.getElementById("navigation-menu")
+        function showMenu() {
+            navLinks.style.right = '0'
         }
-        function hideMenu(){
-            navLinks.style.right='-200px'
+        function hideMenu() {
+            navLinks.style.right = '-200px'
         }
     </script>
-       <script src="dycalendar.js"></script>
-       <script>
-           dycalendar.draw({
-               target: '#dycalendar',
-               type: 'month',
-               dayformat: 'full',
-               monthformat: 'full',
-               highlighttargetdate: true,
-               prevnextbutton: 'show',
-   
-           })
-       </script>
-  
- 
+    <script src="dycalendar.js"></script>
+    <script>
+        dycalendar.draw({
+            target: '#dycalendar',
+            type: 'month',
+            dayformat: 'full',
+            monthformat: 'full',
+            highlighttargetdate: true,
+            prevnextbutton: 'show',
+
+        })
+    </script>
+
+
 </body>
+
 </html>

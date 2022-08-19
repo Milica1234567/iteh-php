@@ -389,7 +389,9 @@ form button .fa-solid {
     margin-right: 15px;
     cursor: pointer;
 }
-
+.ikonice a{
+    color: white;
+}
 hr {
     width: 90%;
     border: 0;
@@ -717,7 +719,7 @@ hr {
 }
 #dycalendar table{
     width: 100%;
-    
+    margin-top:40px ;
     border-spacing: 5px;
     
 }
@@ -743,8 +745,8 @@ hr {
 #dycalendar-month-container .dycalendar-header, .dycalendar-prev-next-btn.prev-btn{
     background: white;
     color: black;
-    width: 34px;
-    height: 28px;
+    width: 44px;
+    height: 38px;
     left: 4px;
     border-radius: 4px;
     display: flex;
@@ -755,14 +757,14 @@ hr {
 #dycalendar-month-container .dycalendar-header, .dycalendar-prev-next-btn.next-btn{
     background: white;
     color: black;
-    width: 34px;
-    height: 28px;
+    width: 44px;
+    height: 38px;
     right: 4px;
     border-radius: 4px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 24px;
+    font-size:24px;
 }
 .dycalendar-month-container .dycalendar-span-month-year{
     color: white;
@@ -770,7 +772,6 @@ hr {
     font-weight: 400;
 }
 .forma-zakazi{
-
     margin-left: 250px;
     width: 400px;
     min-height: 400px;
@@ -785,9 +786,43 @@ hr {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.input-box{
+    
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+.input-forma-zakazi{
+    width: 65%;
+    border-bottom: 1px solid white;
+}
+.input-forma-zakazi::placeholder{
+    color: white;
+    font-size: 14px;
     
 }
+.details{
+    color: white;
+    font-size: 14px;
+}
+#simptomi{
+    background: rgba(255, 255, 255, 0.203);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    color: white;
+    padding: 5px;
+}
 
+
+
+@media(max-width:700px){
+    .kalendar-forma-box{
+        flex-direction: column;
+    }
+}
 /*--------------------------login---------------------------*/
 .header-login {
     min-height: 100vh;
@@ -883,13 +918,6 @@ hr {
     outline: none;
     border-radius: 30px;
     color: white;
-}
-
-span {
-    color: #777;
-    font-size: 12px;
-    bottom: 68px;
-    position: absolute;
 }
 
 #login {
