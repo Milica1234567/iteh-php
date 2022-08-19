@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,15 +8,18 @@
     <title>MedicaMea</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=PT+Serif&family=Roboto:ital,wght@0,300;0,400;1,100;1,300&family=Square+Peg&display=swap" rel="stylesheet">
-<script src="https://kit.fontawesome.com/4e1f20daf1.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Indie+Flower&family=Montserrat:ital,wght@0,200;0,900;1,300&family=PT+Serif&family=Poppins:wght@300&family=Raleway:wght@300&family=Roboto:ital,wght@0,300;0,400;1,100;1,300&family=Shadows+Into+Light&family=Square+Peg&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/4e1f20daf1.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
     <section class="header-login">
         <nav>
             <a href="login.html"><img class="logo" src="images/logo34.png" alt=""></a>
-            
+
             <div class="navigation-menu" id="navigation-menu">
                 <i class="fa solid fa-xmark" onclick="hideMenu()"></i>
                 <ul>
@@ -50,40 +54,41 @@
                 </form>
             </div>
 
-    </div>
+        </div>
     </section>
 
 
 
 
 
-<!-------------JavaScript-------------->
+    <!-------------JavaScript-------------->
     <script>
-        var navLinks= document.getElementById("navigation-menu")
-        function showMenu(){
-            navLinks.style.right='0'
+        var navLinks = document.getElementById("navigation-menu")
+        function showMenu() {
+            navLinks.style.right = '0'
         }
-        function hideMenu(){
-            navLinks.style.right='-200px'
+        function hideMenu() {
+            navLinks.style.right = '-200px'
         }
     </script>
     <script>
-        var x=document.getElementById("login");
-        var y=document.getElementById("register");
-        var z=document.getElementById("btn");
+        var x = document.getElementById("login");
+        var y = document.getElementById("register");
+        var z = document.getElementById("btn");
 
-        function register(){
-            x.style.left="-400px";
-            y.style.left="50px";
-            z.style.left="110px";
+        function register() {
+            x.style.left = "-400px";
+            y.style.left = "50px";
+            z.style.left = "110px";
         }
 
-        function login(){
-            x.style.left="50px";
-            y.style.left="450px";
-            z.style.left="0px";
+        function login() {
+            x.style.left = "50px";
+            y.style.left = "450px";
+            z.style.left = "0px";
         }
 
     </script>
 </body>
+
 </html>

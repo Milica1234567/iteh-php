@@ -461,7 +461,7 @@ hr {
 }
 
 .o-meni-col h1 {
-    padding-top: 70px;
+    padding-top: 50px;
     padding-left: 50px;
 }
 
@@ -479,6 +479,8 @@ hr {
 .vise:hover {
     color: white;
 }
+
+
 
 @media(max-width:700px) {
 
@@ -634,6 +636,7 @@ hr {
 .potpis {
     margin: 50px;
     text-align: right;
+    font-family: 'Dancing Script', cursive;
 }
 
 .post1-desno {
