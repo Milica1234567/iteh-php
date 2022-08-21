@@ -1,3 +1,7 @@
+<?php 
+session_start()
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,7 +30,7 @@
                 <ul>
                     <li><a href="index.html">POČETNA</a></li>
                     <li><a href="about.htm">O MENI</a></li>
-                    <li><a href="login.html">ZAKAZIVANJE</a></li>
+                    <li><a href="login.php">ZAKAZIVANJE</a></li>
                     <li><a href="blog.html">BLOG</a></li>
                 </ul>
             </div>
