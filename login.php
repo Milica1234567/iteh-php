@@ -16,13 +16,13 @@
 <body>
     <section class="header-login">
         <nav>
-            <a href="login.html"><img class="logo" src="images/logo34.png" alt=""></a>
+            <a href="index.html"><img class="logo" src="images/logo34.png" alt=""></a>
 
             <div class="navigation-menu" id="navigation-menu">
                 <i class="fa solid fa-xmark" onclick="hideMenu()"></i>
                 <ul>
                     <li><a href="index.html">POČETNA</a></li>
-                    <li><a href="about.htm">O MENI</a></li>
+                    <li><a href="about.html">O MENI</a></li>
                     <li><a href="login.html">ZAKAZIVANJE</a></li>
                     <li><a href="blog.html">BLOG</a></li>
                 </ul>

@@ -10,7 +10,7 @@ session_start()
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MedicaMea</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="dycalendar.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,18 +23,31 @@ session_start()
 <body>
     <section class="header-zakazivanje">
         <nav>
-            <a href="zakazivanje.html"><img class="logo" src="images/logo34.png" alt=""></a>
+            <a href="index.html"><img class="logo" src="images/logo34.png" alt=""></a>
+            
+            <div class="action">
+                <div class="profile">
+                <i class="fa-regular fa-circle-user fa-2xl" onclick="menuToggle();"></i>
+                <div class="user-menu">
+                    
+                    <ul>
+                        <li><a href="index.html"><i class="fa-solid fa-house-chimney"></i>Početna</a></li>
+                        <li><a href="about.html"><i class="fa-solid fa-user-doctor"></i>O doktorki</a></li>
+                        <li><a href="blog.html"><i class="fa-solid fa-comment-medical"></i>Blog</a></li>
+                        <li><a href="history.php"><i class="fa-solid fa-clock-rotate-left"></i>Istorija zakazivanja</a></li>
+                        <li><a href="update.php"><i class="fa-solid fa-pen-to-square"></i>Promeni podatke</a></li>
+                        <li><button class="submit-btn">Izloguj me</button></li>
+                    </ul>
 
-            <div class="navigation-menu" id="navigation-menu">
-                <i class="fa solid fa-xmark" onclick="hideMenu()"></i>
-                <ul>
-                    <li><a href="index.html">POČETNA</a></li>
-                    <li><a href="about.htm">O MENI</a></li>
-                    <li><a href="login.php">ZAKAZIVANJE</a></li>
-                    <li><a href="blog.html">BLOG</a></li>
-                </ul>
+                </div>
+                </div>
             </div>
-            <i class="fa solid fa-bars" onclick="showMenu()"></i>
+
+            
+                   
+                
+            
+           
         </nav>
         <div class="kalendar-forma-box">
             <div class="kalendar">
@@ -57,6 +70,10 @@ session_start()
                         </div>
                         <div class="input-box">
                             
+                            <input type="text" class="input-forma-zakazi" placeholder="Jmbg deteta">
+                        </div>
+                        <div class="input-box">
+                            
                             <textarea id="simptomi" name="simptomi" rows="4" cols="50">Unesite kratak opis simptoma deteta</textarea>
                         </div>
                         <div class="input-box">
@@ -68,6 +85,9 @@ session_start()
                             <span class="details">Datum i vreme posete:</span>
                             <input type="datetime-local" name="begin" placeholder="Datum i vreme posete">
                         </div>
+                        <button class="submit-btn">Zakazi pregled</button>
+                       
+                      
                     </div>
                 </form>
             </div>
@@ -80,6 +100,12 @@ session_start()
 
 
     <!-------------JavaScript-------------->
+    <script>
+        function menuToggle(){
+            const toggle=document.querySelector('.user-menu');
+            toggle.classList.toggle('active');
+        }
+    </script>
     <script>
         var navLinks = document.getElementById("navigation-menu")
         function showMenu() {
