@@ -1,5 +1,8 @@
 <?php 
-session_start()
+session_start();
+if(!isset($_SESSION['email'])){
+    header('location:login.php');
+}
 ?>
 
 <!DOCTYPE html>
@@ -31,12 +34,13 @@ session_start()
                 <div class="user-menu">
                     
                     <ul>
+                        <h1><?php echo $_SESSION['ime'];?></h1>
                         <li><a href="index.html"><i class="fa-solid fa-house-chimney"></i>Početna</a></li>
                         <li><a href="about.html"><i class="fa-solid fa-user-doctor"></i>O doktorki</a></li>
                         <li><a href="blog.html"><i class="fa-solid fa-comment-medical"></i>Blog</a></li>
                         <li><a href="history.php"><i class="fa-solid fa-clock-rotate-left"></i>Istorija zakazivanja</a></li>
                         <li><a href="update.php"><i class="fa-solid fa-pen-to-square"></i>Promeni podatke</a></li>
-                        <li><button class="submit-btn">Izloguj me</button></li>
+                        <li><button class="submit-btn"><a href="index.html">Izloguj me</a></button></li>
                     </ul>
 
                 </div>
