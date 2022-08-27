@@ -1,9 +1,4 @@
-<?php 
-session_start();
-if(!isset($_SESSION['email'])){
-    header('location:login.php');
-}
-?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -34,7 +29,7 @@ if(!isset($_SESSION['email'])){
                 <div class="user-menu">
                     
                     <ul>
-                        <h1><?php echo $_SESSION['ime'];?></h1>
+                        
                         <li><a href="index.html"><i class="fa-solid fa-house-chimney"></i>Početna</a></li>
                         <li><a href="about.html"><i class="fa-solid fa-user-doctor"></i>O doktorki</a></li>
                         <li><a href="blog.html"><i class="fa-solid fa-comment-medical"></i>Blog</a></li>
