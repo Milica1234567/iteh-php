@@ -16,18 +16,13 @@ $res=mysqli_query($con, $s);
 $num=mysqli_num_rows($res);
 
 if($num==1){
+   
     header('location:zakazivanje.php');
 }
 else{
-    echo "ne postoji nalog";
+    
     header('location:login.php');
 }
 
-//if(!$con){
-//    die(mysqli_error($con));
-//}
-//else{
-//   echo "Uspesno";
-//}
 
 ?>

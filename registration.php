@@ -23,7 +23,8 @@ if($num == 1){
 else{
     $korisnik="insert into `medmea`(ime, prezime, email, password, broj_dece) values('$ime','$prezime','$email','$password',$brdece)";
     mysqli_query($con, $korisnik);
-    $_SESSION['ime']=$ime;
+    $_SESSION['email']=$email;
+    $_SESSION['password']=$password;
     header('location:zakazivanje.php');
 }
 
