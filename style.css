@@ -865,6 +865,10 @@ hr {
   
 }
 
+.action .user-menu h1{
+    color: white;
+}
+
 .action .user-menu ul li a{
     display: inline-block;
     text-decoration: none;

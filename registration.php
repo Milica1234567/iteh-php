@@ -3,7 +3,7 @@ session_start();
 
 $con=new mysqli('localhost', 'root', '');
 
-mysqli_select_db($con,'medicamea');
+mysqli_select_db($con, 'medicamea');
 
 $ime=$_POST['ime'];
 $prezime=$_POST['prezime'];
@@ -11,7 +11,7 @@ $email=$_POST['email'];
 $brdece=$_POST['brdece'];
 $password=$_POST['password'];
 
-$s="select * from medmea where email='$email'";
+$s="select * from `medmea` where email='$email'";
 
 $res=mysqli_query($con, $s);
 
@@ -21,21 +21,23 @@ if($num == 1){
    echo "Već imate nalog sa ovim kredencijalima!";
 }
 else{
-    $korisnik="insert into `medmea`(ime, prezime, email, password, broj_dece) values('$ime','$prezime','$email','$password',$brdece)";
-    mysqli_query($con, $korisnik);
+
+
+    $_SESSION['ime']=$ime;
     $_SESSION['email']=$email;
     $_SESSION['password']=$password;
+    $korisnik="insert into `medmea`(ime, prezime, email, password, br_dece) values('$ime','$prezime','$email','$password',$brdece)";
+    mysqli_query($con, $korisnik);
+   
     header('location:zakazivanje.php');
 }
 
 
-
-
 //if(!$con){
-//    die(mysqli_error($con));
+//   die(mysqli_error($con));
 //}
 //else{
-//   echo "Uspesno";
+//  echo "Uspesno";
 //}
 
 ?>
