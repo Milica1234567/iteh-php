@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif ;
 }
 
 .header {
@@ -980,7 +980,7 @@ hr {
     border: 0;
     outline: none;
     border-radius: 30px;
-    color: white;
+    color: white !important;
 }
 
 #login {
@@ -1008,4 +1008,18 @@ hr {
         width: 65%;
     }
 
+}
+/*--------------------------istorija zakazivanja---------------------------*/
+.submit-btn-hist a{
+    color: white;
+}
+.submit-btn-hist{
+    width: auto;
+    padding: 10px 30px;
+    cursor: pointer;
+    
+    background: #DF646E;
+    border: 0;
+    outline: none;
+    border-radius: 30px;
 }

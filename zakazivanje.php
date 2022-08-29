@@ -13,11 +13,13 @@ if(!isset($_SESSION['email'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MedicaMea</title>
+    <title>MedicaMea/ZAKAZIVANJE</title>
+    
     <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="dycalendar.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
     <link
         href="https://fonts.googleapis.com/css2?family=PT+Serif&family=Roboto:ital,wght@0,300;0,400;1,100;1,300&family=Square+Peg&display=swap"
         rel="stylesheet">
@@ -63,19 +65,19 @@ if(!isset($_SESSION['email'])){
                     <div class="korisnicki-podaci">
                         <div class="input-box">
                             
-                            <input type="text" class="input-forma-zakazi" placeholder="Ime deteta">
+                            <input type="text" class="input-forma-zakazi" id="ime_deteta" placeholder="Ime deteta">
                         </div>
                         <div class="input-box">
                             
-                            <input type="text" class="input-forma-zakazi" placeholder="Prezime deteta">
+                            <input type="text" class="input-forma-zakazi" id="prezime_deteta" placeholder="Prezime deteta">
                         </div>
                         <div class="input-box">
                             
-                            <input type="text" class="input-forma-zakazi" placeholder="Starost deteta">
+                            <input type="text" class="input-forma-zakazi" id="godine" placeholder="Starost deteta">
                         </div>
                         <div class="input-box">
                             
-                            <input type="text" class="input-forma-zakazi" placeholder="Jmbg deteta">
+                            <input type="text" class="input-forma-zakazi" id="jmbg" placeholder="Jmbg deteta">
                         </div>
                         <div class="input-box">
                             
@@ -83,14 +85,15 @@ if(!isset($_SESSION['email'])){
                         </div>
                         <div class="input-box">
                             
-                            <input type="text" class="input-forma-zakazi" placeholder="Vaša adresa:">
+                            <input type="text" class="input-forma-zakazi" id="adresa" placeholder="Vaša adresa:">
                         </div>
                         
                         <div class="input-box">
-                            <span class="details">Datum i vreme posete:</span>
-                            <input type="datetime-local" name="begin" placeholder="Datum i vreme posete">
+                            <span class="details" >Datum i vreme posete:</span>
+                            <input type="datetime-local" name="begin" id="datum" placeholder="Datum i vreme posete">
                         </div>
-                        <button class="submit-btn">Zakazi pregled</button>
+                        <input type="email" class="input" id="email_potvrda" placeholder="Vaš e-mail za potvrdu" name="email" required>
+                        <button class="submit-btn" onclick="zakazitermin()">Zakazi pregled</button>
                        
                       
                     </div>
@@ -131,6 +134,38 @@ if(!isset($_SESSION['email'])){
             prevnextbutton: 'show',
 
         })
+    </script>
+    <script>
+        function zakazitermin(){
+            var ime=$('#ime_deteta').val();
+            var prezime=$('#prezime_deteta').val();
+            var starost=$('#godine').val();
+            var jmbg1=$('#jmbg').val();
+            var simp=$('#simptomi').val();
+            var adress=$('#adresa').val();
+            var dan=$('#datum').val();
+            var mail=$('#email_potvrda').val();
+
+            $.ajax({
+                url:"insert.php",
+                type:'post',
+                data:{
+                    imeSend:ime,
+                    prezimeSend:prezime,
+                    starostSend:starost,
+                    jmbgSend:jmbg1,
+                    simpSend:simp,
+                    adresaSend:adress,
+                    datumSend:dan,
+                    mailSend:mail
+                },
+                success:function(data,status){
+                    console.log(status);
+
+                }
+            });
+
+        }
     </script>
 
 
