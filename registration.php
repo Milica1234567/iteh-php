@@ -1,9 +1,7 @@
 <?php
 session_start();
 
-$con=new mysqli('localhost', 'root', '');
-
-mysqli_select_db($con, 'medicamea');
+include 'connection.php';
 
 $ime=$_POST['ime'];
 $prezime=$_POST['prezime'];
@@ -24,6 +22,8 @@ else{
 
 
     $_SESSION['ime']=$ime;
+    $_SESSION['prezime']=$prezime;
+    $_SESSION['brdece']=$brdece;
     $_SESSION['email']=$email;
     $_SESSION['password']=$password;
     $korisnik="insert into `medmea`(ime, prezime, email, password, br_dece) values('$ime','$prezime','$email','$password',$brdece)";

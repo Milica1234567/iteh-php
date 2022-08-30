@@ -93,7 +93,7 @@ if(!isset($_SESSION['email'])){
                             <input type="datetime-local" name="begin" id="datum" placeholder="Datum i vreme posete">
                         </div>
                         <input type="email" class="input" id="email_potvrda" placeholder="Vaš e-mail za potvrdu" name="email" required>
-                        <button class="submit-btn" onclick="zakazitermin()">Zakazi pregled</button>
+                        <button class="submit-btn">Zakazi pregled</button>
                        
                       
                     </div>
@@ -135,38 +135,7 @@ if(!isset($_SESSION['email'])){
 
         })
     </script>
-    <script>
-        function zakazitermin(){
-            var ime=$('#ime_deteta').val();
-            var prezime=$('#prezime_deteta').val();
-            var starost=$('#godine').val();
-            var jmbg1=$('#jmbg').val();
-            var simp=$('#simptomi').val();
-            var adress=$('#adresa').val();
-            var dan=$('#datum').val();
-            var mail=$('#email_potvrda').val();
-
-            $.ajax({
-                url:"insert.php",
-                type:'post',
-                data:{
-                    imeSend:ime,
-                    prezimeSend:prezime,
-                    starostSend:starost,
-                    jmbgSend:jmbg1,
-                    simpSend:simp,
-                    adresaSend:adress,
-                    datumSend:dan,
-                    mailSend:mail
-                },
-                success:function(data,status){
-                    console.log(status);
-
-                }
-            });
-
-        }
-    </script>
+  
 
 
 </body>

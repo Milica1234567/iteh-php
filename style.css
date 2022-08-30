@@ -990,6 +990,9 @@ hr {
 #register {
     left: 450px;
 }
+#register-up{
+    left: 50px;
+}
 
 @media(max-width:700px) {
 
@@ -1010,6 +1013,16 @@ hr {
 
 }
 /*--------------------------istorija zakazivanja---------------------------*/
+.header-istorija{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.5), rgba(4, 9, 30, 0.5)),
+        url(images/header.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    display: block;
+}
 .submit-btn-hist a{
     color: white;
 }
@@ -1022,4 +1035,20 @@ hr {
     border: 0;
     outline: none;
     border-radius: 30px;
+}
+.tabela{
+    margin-left: 25px;
+    width: 85%;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.71);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgb(255, 255, 255);
+    backdrop-filter: blur(25px);
+    color: #DF646E;
+}
+.fa-solid fa-circle-trash{
+    color: #DF646E;
+}
+.colt table td{
+    text-align: center;
 }
