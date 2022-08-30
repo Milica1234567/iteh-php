@@ -1,7 +1,7 @@
 <?php
 session_start();
 include 'connection.php';
-$id=$_SESSION['id'];
+$id1=$_SESSION['id'];
 ?>
 
 <!DOCTYPE html>

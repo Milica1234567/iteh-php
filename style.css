@@ -988,12 +988,19 @@ hr {
 }
 
 #register {
+    
     left: 450px;
 }
 #register-up{
     left: 50px;
 }
-
+.input-polja-up {
+    display: block;
+    top: 50px;
+    position: absolute;
+    width: 280px;
+    transition: .5s;
+}
 @media(max-width:700px) {
 
     .form-box {
