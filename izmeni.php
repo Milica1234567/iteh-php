@@ -55,7 +55,7 @@ if (isset($_POST['submit-update'])) {
                 <form action="#" method="post" id="register-up" class="input-polja-up">
                     <input type="text" class="input" placeholder="Vaše ime" name="ime" required>
                     <input type="text" class="input" placeholder="Vaše prezime" name="prezime" required>
-                    <input type="email" class="input" placeholder="Vaš e-mail" name="email" required>
+                    <input type="email" class="input" placeholder="Nije moguće promeniti e-mail adresu" name="email" disabled>
                     <input type="number" class="input" placeholder="Broj dece kojima ću ja biti doktor" name="brdece" min="1" required>
                     <input type="password" class="input" placeholder="Password" name="password" required>
                     <button type="submit" name="submit-update" class="submit-btn">Update</button>
