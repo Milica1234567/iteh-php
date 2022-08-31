@@ -4,14 +4,16 @@ include 'connection.php';
 
 
 
+
 if (isset($_POST['submit-update'])) {
 
     $ime = $_POST['ime'];
     $prezime = $_POST['prezime'];
-    $email = $_POST['email'];
+    $email=$_POST['email'];
+    
     $brdece = $_POST['brdece'];
     $password = $_POST['password'];
-    $sql = "update `medmea` set ime='$ime', prezime='$prezime', email='$email', br_dece=$brdece, password='$password' where email='$email'";
+    $sql = "update `medmea` set ime='$ime', prezime='$prezime', br_dece=$brdece, password='$password' where email='$email'";
     $res = mysqli_query($con, $sql);
 }
 ?>
@@ -55,7 +57,7 @@ if (isset($_POST['submit-update'])) {
                 <form action="#" method="post" id="register-up" class="input-polja-up">
                     <input type="text" class="input" placeholder="Vaše ime" name="ime" required>
                     <input type="text" class="input" placeholder="Vaše prezime" name="prezime" required>
-                    <input type="email" class="input" placeholder="Nije moguće promeniti e-mail adresu" name="email" disabled>
+                    <input type="email" class="input" placeholder="Nije moguće promeniti e-mail adresu" name="email">
                     <input type="number" class="input" placeholder="Broj dece kojima ću ja biti doktor" name="brdece" min="1" required>
                     <input type="password" class="input" placeholder="Password" name="password" required>
                     <button type="submit" name="submit-update" class="submit-btn">Update</button>
