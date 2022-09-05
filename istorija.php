@@ -46,7 +46,7 @@
             <div class="row">
                 <div class="col">
                     <div class="tabela" id="showUser">
-                        
+
                     </div>
                 </div>
             </div>
@@ -61,7 +61,7 @@
                     <!-- Modal Header -->
                     <div class="modal-header">
                         <h4 class="modal-title">Zakazivanje novog termina</h4>
-                        
+
                     </div>
 
                     <!-- Modal body -->
@@ -88,10 +88,62 @@
                                 </div>
                                 <div class="input-box">
                                     <span class="details">Datum i vreme posete:</span>
-                                    <input type="datetime-local"  id="datum" placeholder="Datum i vreme posete" name="datum">
+                                    <input type="datetime-local" id="datum" placeholder="Datum i vreme posete" name="datum">
                                 </div>
                                 <input type="email" class="input" id="email_potvrda" placeholder="Vaš e-mail za potvrdu" name="email" required>
-                                <button class="submit-btn"  name="insert" id="insert" value="Zakazi termin">Zakaži pregled</button>
+                                <button class="submit-btn" name="insert" id="insert" value="Zakazi termin">Zakaži pregled</button>
+
+
+                            </div>
+                        </form>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+        <!-- Update  -->
+        <div class="modal fade" id="editModal">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Izmenite podatke o terminu</h4>
+
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body px-2">
+                        <form action="" method="POST" id="edit-form-data" class="form-zakazi">
+
+                            <div class="korisnicki-podaci">
+                                <input type="hidden" name="id_update" id="id_update">
+                                <div class="input-box">
+                                    <input type="text" class="input-forma-zakazi" id="ime_deteta_update" name="ime_deteta_update">
+                                </div>
+                                <div class="input-box">
+                                    <input type="text" class="input-forma-zakazi" id="prezime_deteta_update" name="prezime_deteta_update">
+                                </div>
+                                <div class="input-box">
+                                    <input type="text" class="input-forma-zakazi" id="godine_update" name="godine_update">
+                                </div>
+                                <div class="input-box">
+                                    <input type="text" class="input-forma-zakazi" id="jmbg_update" name="jmbg_update">
+                                </div>
+                                <div class="input-box">
+                                    <textarea id="simptomi_update" name="simptomi_update" rows="4" cols="50">Unesite kratak opis simptoma deteta</textarea>
+                                </div>
+                                <div class="input-box">
+                                    <input type="text" class="input-forma-zakazi" id="adresa_update" name="adresa_update">
+                                </div>
+                                <div class="input-box">
+                                    <span class="details">Datum i vreme posete:</span>
+                                    <input type="text" id="datum_update" name="datum_update">
+                                </div>
+                                <input type="email" class="input" id="email_update" name="email_update" required>
+                                <button class="submit-btn" name="update" id="update" value="Update">Update</button>
 
 
                             </div>
@@ -123,35 +175,37 @@
 
     <script type="text/javascript">
         $(document).ready(function() {
-            
+
 
             showAllRecords()
 
-            function showAllRecords(){
+            function showAllRecords() {
                 $.ajax({
-                    url:"action.php",
-                    type:"POST",
-                    data:{action:"view"},
-                    success:function(response){
+                    url: "action.php",
+                    type: "POST",
+                    data: {
+                        action: "view"
+                    },
+                    success: function(response) {
                         //console.log(response);
                         $("#showUser").html(response);
                         $("table").DataTable({
-                            order:[0, "desc"]
+                            order: [0, "desc"]
                         });
                     }
 
                 });
             }
 
-            $("#insert").click(function(e){
-                if($("#form-data")[0].checkValidity()){
+            $("#insert").click(function(e) {
+                if ($("#form-data")[0].checkValidity()) {
                     e.preventDefault();
                     $.ajax({
-                        url:"action.php",
-                        type:"POST", 
+                        url: "action.php",
+                        type: "POST",
                         //hvata sve vrednosti iz forme u array
-                        data: $("#form-data").serialize()+"&action=insert",
-                        success:function(response){
+                        data: $("#form-data").serialize() + "&action=insert",
+                        success: function(response) {
                             Swal.fire({
                                 title: "Uspešno zakazan termin",
                                 type: 'success'
@@ -163,15 +217,63 @@
                     })
                 }
             })
+            //edit
+            $("body").on("click", ".editBtn", function(e) {
+                e.preventDefault();
+                edit_id = $(this).attr('id');
+                $.ajax({
+                    url: "action.php",
+                    type: "POST",
+                    data: {
+                        edit_id: edit_id
+                    },
+                    success: function(response) {
+                        data = JSON.parse(response);
+                        //console.log(data1__get($ime_deteta));
+                        
+                        
+                        $("#id_update").val(data.id_pregleda);
+                        $("#ime_deteta_update").val(data.ime_deteta);
+                        $("#prezime_deteta_update").val(data.prezime_deteta);
+                        $("#godine_update").val(data.godine);
+                        $("#jmbg_update").val(data.jmbg);
+                        $("#simptomi_update").val(data.simptomi);
+                        $("#adresa_update").val(data.adresa);
+                        $("#datum_update").val(data.datum);
+                        $("#email_update").val(data.email);
+                    }
+                });
+            });
+
+            $("#update").click(function(e) {
+                if ($("#edit-form-data")[0].checkValidity()) {
+                    e.preventDefault();
+                    $.ajax({
+                        url: "action.php",
+                        type: "POST",
+                        //hvata sve vrednosti iz forme u array
+                        data: $("#edit-form-data").serialize() + "&action=update",
+                        success: function(response) {
+                            Swal.fire({
+                                title: "Uspešno izmenjen termin",
+                                type: 'success'
+                            })
+                            $("#editModal").modal('hide');
+                            $("#edit-form-data")[0].reset();
+                            showAllRecords();
+                        }
+                    })
+                }
+            })
         });
     </script>
 
 
-<script type="text/javascript">
-  function form_submit() {
-    document.getElementById("form-data").submit();
-   }    
-  </script>
+    <script type="text/javascript">
+        function form_submit() {
+            document.getElementById("form-data").submit();
+        }
+    </script>
 
 
     <script>

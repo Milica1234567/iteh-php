@@ -39,21 +39,21 @@ class Database{
         return $data;
     }
     public function getUserByID($id){
-        $sql="select * from termin where id=:id";
+        $sql="select * from termin where id_pregleda=:id";
         $stmt=$this->conn->prepare($sql);
         $stmt->execute(['id'=>$id]);
         $result=$stmt->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     }
-    public function update($id, $ime, $prezime, $simptomi, $adresa, $datum){
-        $sql="update termin set ime_deteta=:ime, prezime_deteta=:prezime, simptomi=:simptomi, adresa=:adresa, datum=:datum where id=:id";
+    public function update($id, $ime, $prezime, $godine, $jmbg, $simptomi, $adresa, $datum, $email){
+        $sql="update termin set ime_deteta=:ime, prezime_deteta=:prezime, godine=:godine, jmbg=:jmbg, simptomi=:simptomi, adresa=:adresa, datum=:datum, email=:email where id_pregleda=:id";
         $stmt=$this->conn->prepare($sql);
-        $stmt->execute(['ime'=>$ime,'prezime'=>$prezime, 'simptomi'=>$simptomi, 'adresa'=>$adresa, 'datum'=>$datum, 'id'=>$id]);
+        $stmt->execute(['ime'=>$ime,'prezime'=>$prezime, 'godine'=>$godine, 'jmbg'=>$jmbg, 'simptomi'=>$simptomi, 'adresa'=>$adresa, 'datum'=>$datum, 'email'=>$email, 'id'=>$id]);
         return true;
     }
 
     public function delete($id){
-        $sql="delete from termin where id=:id";
+        $sql="delete from termin where id_pregleda=:id";
         $stmt=$this->conn->prepare($sql);
         $stmt->execute(['id'=>$id]);
         return true;

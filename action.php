@@ -33,9 +33,11 @@ if(isset($_POST['action']) && $_POST['action']=="view"){
             <td>'.$row['datum'].'</td>
             <td>'.$row['adresa'].'</td>
             <td>
-            <a href="#" title="Detalji"><i class="fas fa-info-circle"></i></a>&nbsp;&nbsp;
-            <a href="#" title="Edit"><i class="fas fa-edit"></i></a>&nbsp;&nbsp;
-            <a href="#" title="Delete"><i class="fas fa-trash-alt"></i></a>
+            <a href="#" class="infoBtn" id='.$row['id_pregleda'].' title="Detalji"><i class="fas fa-info-circle"></i></a>&nbsp;&nbsp;
+            
+            <a href="#" class="editBtn" title="Edit" data-toggle="modal" data-target="#editModal" id='.$row['id_pregleda'].'><i class="fas fa-edit"></i></a>&nbsp;&nbsp;
+
+            <a href="#" class="deleteBtn" id='.$row['id_pregleda'].' title="Delete"><i class="fas fa-trash-alt"></i></a>
             </td> </tr>';
         }
         $output.='</tbody></table>';
@@ -60,4 +62,21 @@ if(isset($_POST['action']) && $_POST['action']=="insert"){
 
 }
 
+if(isset($_POST['edit_id'])){
+    $id=$_POST['edit_id'];
+    $row=$db->getUserByID($id);
+    echo json_encode($row);
+}
+
+if(isset($_POST['action']) && $_POST['action']=="update"){
+    $ime_deteta=$_POST['ime_deteta_update'];
+    $prezime_deteta=$_POST['prezime_deteta_update'];
+    $godine=$_POST['godine_update'];
+    $jmbg=$_POST['jmbg_update'];
+    $simptomi=$_POST['simptomi_update'];
+    $adresa=$_POST['adresa_update'];
+    $datum=$_POST['datum_update'];
+    $email=$_POST['email_update'];
+    $db->update($id, $ime_deteta, $prezime_deteta, $godine, $jmbg, $simptomi, $adresa, $datum, $email);
+}
 ?>
