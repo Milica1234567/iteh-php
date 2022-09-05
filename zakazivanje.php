@@ -1,11 +1,3 @@
-<?php
-session_start();
-if(!isset($_SESSION['email'])){
-    header('location:login.php');
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,11 +29,11 @@ if(!isset($_SESSION['email'])){
                 <div class="user-menu">
                     
                     <ul>
-                        <h1><?php echo $_SESSION['ime'];?> </h1>
+                        <h1> </h1>
                         <li><a href="index.html"><i class="fa-solid fa-house-chimney"></i>Početna</a></li>
                         <li><a href="about.html"><i class="fa-solid fa-user-doctor"></i>O doktorki</a></li>
                         <li><a href="blog.html"><i class="fa-solid fa-comment-medical"></i>Blog</a></li>
-                        <li><a href="history.php"><i class="fa-solid fa-clock-rotate-left"></i>Istorija zakazivanja</a></li>
+                        <li><a href="istorija.php"><i class="fa-solid fa-clock-rotate-left"></i>Istorija zakazivanja</a></li>
                         <li><a href="update.php"><i class="fa-solid fa-pen-to-square"></i>Promeni podatke</a></li>
                         <li><button class="submit-btn"><a href="logout.php">Izloguj me</a></button></li>
                     </ul>
@@ -61,23 +53,23 @@ if(!isset($_SESSION['email'])){
                 <div id="dycalendar"></div>
             </div>
             <div class="forma-zakazi">
-                <form action="#" class="form-zakazi">
+                <form action="zakazi.php" class="form-zakazi">
                     <div class="korisnicki-podaci">
                         <div class="input-box">
                             
-                            <input type="text" class="input-forma-zakazi" id="ime_deteta" placeholder="Ime deteta">
+                            <input type="text" class="input-forma-zakazi" id="ime_deteta" placeholder="Ime deteta" name="ime_deteta">
                         </div>
                         <div class="input-box">
                             
-                            <input type="text" class="input-forma-zakazi" id="prezime_deteta" placeholder="Prezime deteta">
+                            <input type="text" class="input-forma-zakazi" id="prezime_deteta" placeholder="Prezime deteta" name="prezime_deteta">
                         </div>
                         <div class="input-box">
                             
-                            <input type="text" class="input-forma-zakazi" id="godine" placeholder="Starost deteta">
+                            <input type="text" class="input-forma-zakazi" id="godine" placeholder="Starost deteta" name="godine">
                         </div>
                         <div class="input-box">
                             
-                            <input type="text" class="input-forma-zakazi" id="jmbg" placeholder="Jmbg deteta">
+                            <input type="text" class="input-forma-zakazi" id="jmbg" placeholder="Jmbg deteta" name="jmbg">
                         </div>
                         <div class="input-box">
                             
@@ -85,12 +77,12 @@ if(!isset($_SESSION['email'])){
                         </div>
                         <div class="input-box">
                             
-                            <input type="text" class="input-forma-zakazi" id="adresa" placeholder="Vaša adresa:">
+                            <input type="text" class="input-forma-zakazi" id="adresa" placeholder="Vaša adresa:" name="adresa">
                         </div>
                         
                         <div class="input-box">
                             <span class="details" >Datum i vreme posete:</span>
-                            <input type="datetime-local" name="begin" id="datum" placeholder="Datum i vreme posete">
+                            <input type="datetime-local" name="begin" id="datum" placeholder="Datum i vreme posete" name="datum">
                         </div>
                         <input type="email" class="input" id="email_potvrda" placeholder="Vaš e-mail za potvrdu" name="email" required>
                         <button class="submit-btn">Zakazi pregled</button>

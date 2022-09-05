@@ -1,5 +1,5 @@
 <?php
-session_start();
+/*session_start();
 
 include 'connection.php';
 
@@ -39,5 +39,10 @@ else{
 //else{
 //  echo "Uspesno";
 //}
+*/
+
+
+
+
 
 ?>

@@ -1030,32 +1030,56 @@ hr {
     position: relative;
     display: block;
 }
-.submit-btn-hist a{
-    color: white;
-}
+
 .submit-btn-hist{
     width: auto;
     padding: 10px 30px;
     cursor: pointer;
-    
     background: #DF646E;
     border: 0;
     outline: none;
     border-radius: 30px;
+    color: white;
 }
 .tabela{
-    margin-left: 25px;
-    width: 85%;
+    margin-top: -25px;
+   
+    width: 100%;
     border-radius: 4px;
     background: rgba(255, 255, 255, 0.71);
     box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
     border: 1px solid rgb(255, 255, 255);
     backdrop-filter: blur(25px);
     color: #DF646E;
+    
 }
-.fa-solid fa-circle-trash{
+.tabela tr th{
     color: #DF646E;
-}
-.colt table td{
     text-align: center;
+}
+.tabela tr td{
+    color: black;
+    text-align: center;
+}
+.ispod{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+
+.modal-content{
+    border-radius: 6px;
+    background: rgb(255, 255, 255, 0.1);
+    box-shadow: 0 25px 45px rgb(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(35px);
+}
+.modal-header{
+    text-align: center;
+    color: #fff;
+}
+.close-modal{
+    color: white;
 }

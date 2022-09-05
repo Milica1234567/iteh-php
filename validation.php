@@ -1,5 +1,5 @@
 <?php
-session_start();
+/*session_start();
 
 include 'connection.php';
 
@@ -30,4 +30,8 @@ if($num==1){
 else{
     
     header('location:login.php');
-}
+}*/
+
+
+
+?>

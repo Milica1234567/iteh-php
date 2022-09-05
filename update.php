@@ -1,7 +1,10 @@
 <?php
-session_start();
-include 'connection.php';
-$id1=$_SESSION['id'];
+require 'connection.php';
+$select=new Select();
+if(isset($_SESSION["id"])){
+    $kor=$select->selectById($_SESSION["id"]);
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -35,7 +38,7 @@ $id1=$_SESSION['id'];
                     <div class="user-menu">
 
                         <ul>
-                            <h1><?php echo $_SESSION['ime']; ?> </h1>
+                            <h1><?php echo $kor["ime"]; ?> </h1>
                             <li><a href="index.html"><i class="fa-solid fa-house-chimney"></i>Početna</a></li>
                             <li><a href="about.html"><i class="fa-solid fa-user-doctor"></i>O doktorki</a></li>
                             <li><a href="blog.html"><i class="fa-solid fa-comment-medical"></i>Blog</a></li>
@@ -74,12 +77,12 @@ $id1=$_SESSION['id'];
                             </thead>
                             <tbody>
                                 <tr class="text-centerd text-secendary">
-                                    <td><?php echo $_SESSION['id'];?></td>
-                                    <td><?php echo $_SESSION['ime'];?></td>
-                                    <td><?php echo $_SESSION['prezime'];?></td>
-                                    <td><?php echo $_SESSION['email'];?></td>
-                                    <td><?php echo $_SESSION['brdece'];?></td>
-                                    <td><?php echo $_SESSION['password'];?></td>
+                                    <td><?php echo $kor["id"];?></td>
+                                    <td><?php echo $kor["ime"];;?></td>
+                                    <td><?php echo $kor["prezime"];;?></td>
+                                    <td><?php echo $kor["email"];;?></td>
+                                    <td><?php echo $kor["br_dece"];?></td>
+                                    <td><?php echo $kor["pass"];?></td>
                                     <td><a href="izmeni.php" ><i class="fa-regular fa-pen-to-square"></i></a></td>
                                     
 
