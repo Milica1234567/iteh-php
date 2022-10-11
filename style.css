@@ -661,9 +661,7 @@ hr {
     box-sizing: border-box;
 }
 
-.reklama img {
-    margin-top: 150px;
-}
+
 
 @media(max-width:700px) {
     .post1-red {
@@ -678,7 +676,7 @@ hr {
         float: left;
     }
 
-    .reklama img {
+    .reklama  {
         max-width: 300px;
 
     }
