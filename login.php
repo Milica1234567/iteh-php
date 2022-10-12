@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,14 +39,15 @@
                 <form action="validation.php" method="POST" id="login" class="input-polja">
                     <input type="email" class="input" placeholder="Vaš e-mail" name="email" required>
                     <input type="password" class="input" name="password" placeholder="Password" required>
-                    <button type="submit" class="submit-btn">Log In</button>
+
+                    <button type="submit" name="login-btn" class="submit-btn">Log In</button>
+                    <!--<a href="#" style="color: white; margin: 15px;">Zaboravljena lozinka?</a>-->
+
                 </form>
                 <form action="registration.php" method="post" id="register" class="input-polja">
-                    <input type="text" class="input" placeholder="Vaše ime" name="ime" required>
-                    <input type="text" class="input" placeholder="Vaše prezime" name="prezime" required>
-                    <input type="email" class="input" placeholder="Vaš e-mail" name="email" required>
-                    <input type="number" class="input" placeholder="Broj dece kojima ću ja biti doktor" name="brdece" min="1" required>
-                    <input type="password" class="input" placeholder="Password" name="password" required>
+                    <input type="text" class="input" placeholder="Vaše puno ime" name="ime" id="ime" required>
+                    <input type="email" class="input" placeholder="Vaš e-mail" name="email" id="remail" required>
+                    <input type="password" class="input" placeholder="Password" name="password" id="rpassword" required>
                     <button type="submit" name="submit-reg" class="submit-btn">Register</button>
                 </form>
 
